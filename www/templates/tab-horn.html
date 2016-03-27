@@ -1,0 +1,31 @@
+<ion-view view-title="Horn">
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        Padding<br>Padding
+      </div>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Sound is: 
+        <span ng-if="isPlaying">Playing</span>
+        <span ng-if="!isPlaying">Not playing</span>
+      </div>
+      <div class="item item-text-wrap">
+        <button ng-click="play('horn1')" class="button icon-left ion-star button-positive">Go Vikes!</button>
+      </div>
+    </div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="horn in horns" type="item-text-wrap" href="#/tab/horns/{{horn.id}}">
+        <img ng-src="{{horn.face}}">
+        <h2>{{horn.name}}</h2>
+        <p>{{horn.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(horn)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

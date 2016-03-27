@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>  
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>  
+    <script src="cordova.js"></script> 
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  <body ng-app="starter">
+    <ion-pane ng-controller="HornsCtrl">
+      <ion-header-bar class="bar-stable" style="background-color:#F6B837;">
+        <h1 class="title" style="color: white;">Go Vikes!</h1>
+      </ion-header-bar>
+      <div class="backgroundHelmet" style="background-color:#393783;" ng-click="play(selectedSound)">
+        
+      </div>
+      <label class="item item-input item-select soundSelect">
+        <div class="input-label">
+          &#xA0;
+        </div>
+        <select class="item item-input item-select soundSelect" ng-options="sound.FriendlyName for sound in sounds" ng-model="selectedSound" ng-change="soundChanged()" ng-click="soundIsEnabled = false"></select> 
+      </label>
+      <button ng-click="stop()" class="button icon ion-stop stopButton"></button>
+    </ion-pane>
+    
+    <style>
+    .backgroundHelmet {
+      background: url(img/helmet.png);
+      background-color: #393783;
+      background-repeat: no-repeat;
+      background-position-y: 60%;
+      background-position-x: 50%;
+      background-size: 130%;
+      height:100%;
+      width:100%
+    }
+    .hornButton {
+      background: url(img/horn.png);
+      background-size: 240px 170px;
+      height: 280px;
+      width: 280px;
+      background-repeat: no-repeat;
+      background-position-x: 16px;
+      background-position-y: 40px;
+      background-color: white;
+      
+      margin-left:auto;
+      margin-right:auto;
+      
+      margin-top:100px;
+      display:block;
+    }
+    .hornButton span {
+      display: block;
+      margin-top: -114px;
+    }
+      
+    .soundSelect {
+      position:absolute;
+      bottom:0px;
+      width:86%;
+    }
+      
+    .stopButton {
+      position:absolute;
+      bottom:-1px;
+      right:1px;
+      min-height:49px
+    }
+      
+    .input-label {
+      width: 0%;
+    }
+      
+    .item-select select {
+      left: 0;
+      max-width: 100%;
+      direction: ltr;
+      padding-left:20px;
+    }
+    </style>
+  </body>
+</html>
+

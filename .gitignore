@@ -1,0 +1,5 @@
+platforms/android/*
+platforms/ios/*
+platforms/browser/*
+www/lib/*
+plugins/*
